@@ -1,0 +1,24 @@
+[package]
+name = "servicekit"
+description = "Out of the box API"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+axum = { version = "*" }
+axum-extra = { version = "*", features = ["cookie"] }
+async-trait = { version = "*" }
+juniper = { version = "*", features = ["chrono", "uuid"] }
+tower = { version = "*" }
+tower-http = { version = "*", default-features = false, features = [
+    "cors",
+    "trace",
+] }
+tokio = { version = "*", features = ["full"] }
+tracing = { version = "*" }
+tracing-subscriber = { version = "*", features = ["env-filter"] }
+dotenvy = { version = "*" }
+serde = { version = "*", features = ["derive"] }
+serde_json = { version = "*" }
+uuid = { version = "*", features = ["v4", "serde"] }
+chrono = { version = "*", features = ["serde"] }
